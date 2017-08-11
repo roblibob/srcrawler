@@ -1,0 +1,18 @@
+{
+    "db": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "srcrawler"
+    },
+    "endpoints": {
+        "baseUrl": "https://statsroyale.com",
+        "clan": "{0}/clan/{1}",
+        "profile": "{0}/profile/{1}",
+        "refresh": "/refresh"
+    },
+    "clans": [
+        { "id": "2PQGV0CU", "name": "gubbar reloaded" },
+        { "id": "28VLYJ2C", "name": "GubbarReloaded2" }
+    ]
+}
