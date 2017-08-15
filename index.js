@@ -1,4 +1,4 @@
-import Crawler from "Crawler";
+import Crawler from "./Crawler";
 import request from "request";
 import config from "config";
 import format from "string-format";
