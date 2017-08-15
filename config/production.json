@@ -1,8 +1,8 @@
 {
     "db": {
-        "host": "",
-        "user": "",
-        "password": "",
-        "database": ""
+        "host": "gubbar.nu",
+        "user": "gub_sql",
+        "password": "S3cretes",
+        "database": "gubbar_nu"
     }
 }
