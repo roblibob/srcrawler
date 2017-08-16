@@ -80,6 +80,6 @@ function refresh (url) {
 //Times each of the clan tasks
 for (let task of clanTasks) {
     refresh(task);
-    setInterval(refresh, 1000 * 60 * 60 * 2, task);
+    setInterval(refresh, 1000 * 60 * 60 * 2.5, task);
 }
 
