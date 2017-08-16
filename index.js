@@ -46,7 +46,7 @@ let clanCrawler = new Crawler({
                 }
             });
 
-            console.log(clan + " parsed.");
+            console.log(clanString + " parsed.");
         }
         done();
     }
