@@ -12,6 +12,5 @@ export default class User {
 
     save() {
         new Db().saveUser(this);
-        console.log("User " + this.id + " saved");
     }
 }

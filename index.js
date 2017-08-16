@@ -30,6 +30,7 @@ let clanCrawler = new Crawler({
             console.log(error);
         } else {
             let $ = res.$;
+            let clanString = "";
             $(".clan__rowContainer").each(function (i, el) {
                 if ($(el).children().length === 7) {
                     let id = $(el).children().eq(1).children().first().attr("href").replace("/profile/", "");
@@ -40,9 +41,12 @@ let clanCrawler = new Crawler({
                     let donations = $(el).children().eq(5).text().trim();
 
                     let user = new User(id, name, clan, level, trophies, donations);
+                    clanString = clan;
                     user.save();
                 }
             });
+
+            console.log(clan + " parsed.");
         }
         done();
     }
