@@ -31,6 +31,7 @@ let clanCrawler = new Crawler({
         } else {
             let $ = res.$;
             let clanString = "";
+            let count = 0;
             $(".clan__rowContainer").each(function (i, el) {
                 if ($(el).children().length === 7) {
                     let id = $(el).children().eq(1).children().first().attr("href").replace("/profile/", "");
@@ -39,14 +40,16 @@ let clanCrawler = new Crawler({
                     let level = $(el).children().eq(2).text().trim();
                     let trophies = $(el).children().eq(4).text().trim();
                     let donations = $(el).children().eq(5).text().trim();
-
-                    let user = new User(id, name, clan, level, trophies, donations);
+                    let role = $(el).children().eq(6).text().trim();
+                    let user = new User(id, name, clan, level, trophies, donations, role);
+                    console.log(id, name, clan, level, trophies, donations, role);
                     clanString = clan;
+                    count++;
                     user.save();
                 }
             });
 
-            console.log(clanString + " parsed.");
+            console.log(clanString + " parsed. (" + count + ") saved.");
         }
         done();
     }

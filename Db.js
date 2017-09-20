@@ -18,6 +18,7 @@ export default class Db {
                 id      VARCHAR(10) NOT NULL,
                 name    VARCHAR(100) NOT NULL,
                 clan    VARCHAR(16),
+                role    VARCHAR(16),
                 level   INT(2) NOT NULL,
                 PRIMARY KEY (id)
             );
@@ -42,11 +43,11 @@ export default class Db {
         this.connection.connect();
         
         let userQuery = `
-            INSERT INTO sr_users (id, name , clan, level) 
-            VALUES (?, ?, ?, ?) 
+            INSERT INTO sr_users (id, name, clan, level, role) 
+            VALUES (?, ?, ?, ?, ?) 
             ON DUPLICATE KEY UPDATE id = ?;
         `;
-        let userInserts = [user.id, user.name, user.clan, user.level, user.id];
+        let userInserts = [user.id, user.name, user.clan, user.level, user.role, user.id];
 
         let statsQuery = `
             INSERT INTO sr_stats (user_id, trophies, donations)
